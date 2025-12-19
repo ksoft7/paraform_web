@@ -234,7 +234,7 @@ const ResponsiveNav = () => {
 
       <style>{`
         body {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+          font-family: var(--font2);
         }
 
         /* Desktop Header */
@@ -288,7 +288,7 @@ const ResponsiveNav = () => {
         .logo-link {
           transition: color 0.3s;
           cursor: pointer;
-          color: #000;
+          color: #1A1A1A;
           text-decoration: none;
         }
 
@@ -329,7 +329,7 @@ const ResponsiveNav = () => {
         }
 
         .nav-link:hover {
-          color: #000;
+          color: #1A1A1A;
         }
 
         .dropdown-btn {
@@ -348,6 +348,7 @@ const ResponsiveNav = () => {
         .mobile-menu-btn {
           display: block;
           margin-right: -14px;
+          color: #1A1A1A;
           cursor: pointer;
           background: none;
           border: none;
@@ -367,6 +368,7 @@ const ResponsiveNav = () => {
           user-select: none;
           width: 48px;
           outline: none;
+          color: black;
         }
 
         .hamburger-line {
@@ -419,7 +421,7 @@ const ResponsiveNav = () => {
           overflow: hidden;
           position: relative;
           font-size: 15px;
-          color: #000;
+          color: #1A1A1A;
           font-family: var(--font1);
         }
 
@@ -446,7 +448,8 @@ const ResponsiveNav = () => {
         }
 
         .mobile-nav-container {
-          max-width: 1280px;
+          max-width: var(--max-width);
+          width: var(--cont-wd);
           margin: 0 auto;
           padding: 0 1rem;
           display: flex;
@@ -465,19 +468,21 @@ const ResponsiveNav = () => {
           align-items: center;
           justify-content: space-between;
           width: 100%;
-          padding: 0.75rem 0;
-          font-size: 1.75rem;
+          padding: 1.5rem 0;
+          font-size: 28px;
           letter-spacing: -0.035rem;
           line-height: 1.2;
-          color: #000;
-          font-weight: 600;
+          color: #1A1A1A;
+          font-weight: 400;
           border: none;
           border-bottom: 1px solid rgba(0, 0, 0, 0.08);
           background: none;
           cursor: pointer;
           text-decoration: none;
           transition: color 0.2s;
+          font-family: var(--font2);
         }
+
 
         .menu-item:hover {
           color: rgba(0, 0, 0, 0.8);
@@ -509,21 +514,23 @@ const ResponsiveNav = () => {
         }
 
         .mobile-button {
-          display: inline-flex;
+          display: flex;
           gap: 0.5rem;
           align-items: center;
           justify-content: center;
           white-space: nowrap;
           border-radius: 9999px;
-          padding: 0.78125rem 1rem;
+          padding: 1rem 1.3rem;
           background-color: rgba(0, 0, 0, 0.02);
-          color: #000;
+          color: #1A1A1A;
           border: 1px solid rgba(0, 0, 0, 0.1);
           backdrop-filter: blur(4px);
           transition: backdrop-filter 0.2s;
           overflow: hidden;
           position: relative;
-          font-size: 18px;
+          font-size: 16px;
+          font-weight: 400;
+          font-family: var(--font1);
         }
 
         .mobile-button:hover {
@@ -535,8 +542,8 @@ const ResponsiveNav = () => {
         }
 
         .icon {
-          width: 1rem;
-          height: 1rem;
+          width: 1.5rem;
+          height: 1.5rem;
         }
 
         .button-text-wrapper {

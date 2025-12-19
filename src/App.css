@@ -250,71 +250,6 @@ header .headerWrap div p {
   font-family: var(--font1);
 }
 
-/* icon logo animation */
-.paraform-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 8rem auto;
-  height: 80px;
-  overflow: hidden;
-
-  /* optional edge fade like Paraform */
-  /* mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  ); */
-}
-
-.paraform-slot {
-  flex: 0 0 140px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.paraform-slot img {
-  max-width: 120px;
-  max-height: 42px;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: blur(0.3px);
-}
-
-/* animate only active slot */
-.paraform-slot.is-animating {
-  animation: paraformReplace 0.5s ease both;
-}
-
-@keyframes paraformReplace {
-  from {
-    transform: translateY(12px);
-    opacity: 0;
-    filter: blur(4px);
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-    filter: blur(0.3px);
-  }
-}
-
 /* ================================
    CONTAINER
 ================================ */
@@ -628,6 +563,20 @@ header .headerWrap div p {
 }
 
 /* scroll_sec */
+.text-scro-hol2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hideText {
+  display: none;
+}
+
 .scroll_sec article {
   display: flex;
   border-left: 1.5px solid gainsboro;
@@ -644,14 +593,16 @@ header .headerWrap div p {
   padding-left: 3rem;
 }
 
-.scroll_sec article .text-scro-hol h2 {
+.scroll_sec article .text-scro-hol h2,
+.textDes h2 {
   color: #000;
   font-size: 22px;
   font-family: var(--font1);
   font-weight: var(--f-weightmd2);
 }
 
-.scroll_sec article .text-scro-hol p {
+.scroll_sec article .text-scro-hol p,
+.textDes p {
   color: var(--text-color);
   max-width: 350px;
   width: 100%;
@@ -664,7 +615,8 @@ header .headerWrap div p {
   margin: 1rem 0;
 }
 
-.scroll_sec article .text-scro-hol h3 {
+.scroll_sec article .text-scro-hol h3,
+.textDes h3 {
   color: var(--text-color);
   max-width: 350px;
   width: 100%;
@@ -675,7 +627,8 @@ header .headerWrap div p {
   color: var(--text-color);
 }
 
-.scroll_sec article .text-scro-hol h6 {
+.scroll_sec article h6,
+.textDes h6 {
   color: var(--text-color);
   font-size: 16px;
   font-family: var(--font1);
@@ -792,9 +745,11 @@ header .headerWrap div p {
 }
 
 /* Logo Styles */
-.text-scro-hol2 .logo-area {
+.content-layer .logo-area img {
   height: 5rem;
-  width: 14rem;
+  width: 15rem;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 /* Quote Styles */
@@ -1363,6 +1318,7 @@ footer h6 {
 .screen {
   flex: none;
   width: 300px;
+  color: red;
   padding: 15px;
   position: relative;
 }
@@ -1389,6 +1345,8 @@ footer h6 {
   font-size: 18px;
   color: #333;
   margin-bottom: 5px;
+  font-weight: var(--f-weightMd);
+  font-family: var(--font1);
 }
 .screen .subtitle {
   font-size: 14px;
@@ -1470,16 +1428,6 @@ footer h6 {
   color: #47964b;
 } /* green */
 
-.text-scro-hol2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-}
-
 /* media queries */
 
 /* responsive row scaling */
@@ -1518,30 +1466,34 @@ footer h6 {
     padding-left: 0;
     gap: 0;
   }
-  .scroll_sec article .text-scro-hol h2 {
+  .textDes h2,
+  .hideText h2 {
     color: #000;
     font-size: 22px;
     font-family: var(--font1);
     font-weight: var(--f-weightmd2);
   }
 
-  .scroll_sec article .text-scro-hol p {
+  .textDes p,
+  .hideText p {
     max-width: 100%;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #000;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #000 !important;
   }
 
-  .scroll_sec article .text-scro-hol h3 {
-    max-width: 100%;
-    color: #000;
-    font-weight: 700;
-    font-size: 60px;
+  .textDes h3,
+  .hideText h3 {
+    max-width: 100% !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    font-size: 60px !important;
   }
 
-  .scroll_sec article .text-scro-hol h6 {
-    color: #000000;
-    font-size: 15px;
+  .textDes h6,
+  .hideText h6 {
+    color: #000000 !important;
+    font-size: 15px !important;
   }
   .text-scro-hol2 {
     flex-wrap: wrap;
@@ -1560,7 +1512,42 @@ footer h6 {
     max-width: 1500px !important;
     max-height: 600px !important;
     margin: 0 auto;
+    background-color: blue;
   }
+
+  .scroll_sec article h2,
+  .scroll_sec article p,
+  .scroll_sec article h3,
+  .scroll_sec article h6 {
+    display: none;
+  }
+
+  .textDes h2,
+  .textDes p,
+  .textDes h3,
+  .textDes h6 {
+    display: block !important;
+  }
+
+  .scroll_sec .screen h3 {
+    display: block;
+     max-width: 100% !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+  }
+
+  
+  .info p {
+    margin: 0 !important;
+  }
+
+  .hideText {
+    display: block;
+    width: 100%;
+    margin: 3rem 0;
+  }
+
   .card-container {
     aspect-ratio: 0;
     width: 100%;
@@ -1629,23 +1616,32 @@ footer h6 {
 
 @media (max-width: 563px) {
   .slider {
-    margin-left: 50rem;
-    margin-bottom: -8rem;
+    margin-left: 40rem;
+    margin-bottom: -14rem;
     border-radius: 8px;
     height: 500px;
+    padding: 0;
     padding-bottom: 40rem;
-    border: 5px solid #ffffff;
+  }
+  .card{
+    gap: 15px;
+  }
+  .info{
+    gap: 1px;
+  }
+  .info p{
+    font-size: 10px !important;
   }
   .screen {
     flex: none;
-    width: 250px;
+    width: 210px;
     padding: 15px;
     position: relative;
   }
   .contain {
     aspect-ratio: 352 / 460;
     max-width: 1500px;
-    max-height: 600px;
+    max-height: 470px;
     width: 100%;
     height: 100%;
     min-height: 100%;
@@ -1679,11 +1675,14 @@ footer h6 {
   }
 
   .slider {
-    margin-left: 55rem;
+    margin-left: 48rem !important;
     margin-bottom: -22rem;
     height: 500px;
     padding-bottom: 40rem;
-    border: 5px solid #ffffff;
+  }
+
+  .screen{
+    width: 240px;
   }
 
   .card {
@@ -1693,6 +1692,7 @@ footer h6 {
 
   .info p {
     font-size: 12px;
+    margin: 0 !important;
     gap: 3px;
   }
 

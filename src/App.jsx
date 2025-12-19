@@ -15,22 +15,74 @@ import VdCard from "./components/vdCard.jsx";
 import Testimonial from "./components/testimonial.jsx";
 import ScrollJack from "./components/scrollJack.jsx";
 
-const logos = [
-  "/log1.svg",
-  "/log2.svg",
-  "/log3.svg",
-  "/log4.svg",
-  "/log5.svg",
-  "/log6.svg",
-  "/log7.svg",
-  "/log8.svg",
-];
+// const LOGOS = [
+//   {
+//     id: "windsurf",
+//     href: "https://windsurf.com/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/2132ff94f36027ea664220aec01226b7ab2104a3-125x17.svg",
+//   },
+//   {
+//     id: "traba",
+//     href: "https://traba.work/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/783e1706ed727018fa4551c28bf8ff1bf6f2cdcb-70x20.svg",
+//   },
+//   {
+//     id: "owner",
+//     href: "https://www.owner.com/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/abecb7729c3bcc2383854b2dce956ddcad48a437-112x28.svg",
+//   },
+//   {
+//     id: "basis",
+//     href: "https://www.getbasis.ai/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/cf18d167e431e5eb463dbbb1a020470e51615735-81x24.svg",
+//   },
+//   {
+//     id: "scale",
+//     href: "https://scale.com/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/42836d7889e05c15a3da0df6b06d352dd9f430b9-76x26.svg",
+//   },
+//   {
+//     id: "pylon",
+//     href: "https://usepylon.com/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/fb8d4b83348070c053e799cde68516c1d5960566-81x24.svg",
+//   },
+//   {
+//     id: "nooks",
+//     href: "https://nooks.ai/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/4ac63f5b7e621f83c117de669d0f72170d96caf0-100x21.svg",
+//   },
+//   {
+//     id: "meter",
+//     href: "https://www.meter.com/",
+//     src: "https://cdn.sanity.io/images/e5ozko3p/production/2ac784a8503062f6f9421444a3a1bcb3c2e8cfd4-65x19.svg",
+//   },
+//   {
+//     id: "argueCode",
+//     href: "https://argue.ai/",
+//     src: "/log8.svg",
+//   },
+//   {
+//     id: "decagon",
+//     href: "https://decagon.ai/",
+//     src: "/log7.svg",
+//   },
+//   {
+//     id: "hightouch",
+//     href: "https://hightouch.ai/",
+//     src: "/log6.svg",
+//   },
+//   {
+//     id: "persona",
+//     href: "https://persona.ai/",
+//     src: "/log2.svg",
+//   },
+// ];
 
 function App() {
   return (
     <>
       <main>
-        <Header />
+        {/* <Header /> */}
 
         <div className="celebrate">
           <div>
@@ -61,7 +113,7 @@ function App() {
               hoverbg="#333434"
             />
           </div>
-          <ParaformLogoRow logos={logos} visibleCount={7} interval={5000} />
+          <ParaformLogoRow />
         </section>
         <ParaformCards />
       </main>

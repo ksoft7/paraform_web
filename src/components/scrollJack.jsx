@@ -47,11 +47,20 @@ const ScrollSection = () => {
       stat: "500+",
       statLabel: "Companies hiring",
       content: (
-        <div className="text-scro-hol">
+        <div className="text-scro-hol textDes">
           <div className="text-scro-hol2">
             <span>
               <FeatureShowcase />
             </span>
+            <aside className="hideText">
+              <h2>Tap into elite recruiter networks</h2>
+              <p>
+                Only work with recruiters with a proven track record trusted by
+                world-class companies.
+              </p>
+              <h3>500+</h3>
+              <h6>Companies hiring</h6>
+            </aside>
             <span>
               <MagneticGrid />
             </span>
@@ -66,7 +75,7 @@ const ScrollSection = () => {
       stat: "70%",
       statLabel: "Interview rate",
       content: (
-        <figure>
+        <figure className="textDes">
           <div
             style={{
               width: "100%",
@@ -79,6 +88,15 @@ const ScrollSection = () => {
           >
             <img src={KiaraImg} alt="Kiara" />
           </div>
+          <aside className="hideText">
+            <h2>Meet candidates worth meeting</h2>
+            <p>
+              Cut through the noise with candidates that hit the mark — and move
+              fast from intro to interview.
+            </p>
+            <h3>70%</h3>
+            <h6>Interview rate</h6>
+          </aside>
         </figure>
       ),
     },
@@ -89,7 +107,7 @@ const ScrollSection = () => {
       stat: "3X",
       statLabel: "Faster to hire",
       content: (
-        <figure>
+        <figure className="textDes">
           <div
             style={{
               width: "100%",
@@ -102,6 +120,15 @@ const ScrollSection = () => {
           >
             <CardAnimate />
           </div>
+          <aside className="hideText">
+            <h2>Hire faster with fewer hurdles</h2>
+            <p>
+              Streamlined workflows, no back-and-forth, no admin — just
+              pre-vetted warm intros, fast.
+            </p>
+            <h3>3X</h3>
+            <h6>Faster to hire</h6>
+          </aside>
         </figure>
       ),
     },
@@ -112,7 +139,7 @@ const ScrollSection = () => {
       stat: "98%",
       statLabel: "Satisfaction rate",
       content: (
-        <figure>
+        <figure className="textDes">
           <div
             style={{
               width: "100%",
@@ -125,6 +152,12 @@ const ScrollSection = () => {
           >
             <img src={Candate} alt="Candate" />
           </div>
+          <aside className="hideText">
+            <h2>White glove support</h2>
+            <p>description</p>
+            <h3>98%</h3>
+            <h6>Satisfaction rate</h6>
+          </aside>
         </figure>
       ),
     },
