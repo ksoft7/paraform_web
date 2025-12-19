@@ -21,7 +21,7 @@ html {
   --text-size: 14px;
   --text-size2: 16px;
   --text-size-big: 6.4rem;
-  --cont-wd: 90%;
+  --cont-wd: 94%;
   --text-size-sm: 12px;
   --text-size-md: 18px;
   --max-width: 1440px;
@@ -179,6 +179,7 @@ header .headerWrap div p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.2rem;
   width: 42rem;
   border-radius: 3rem;
   margin: 0 auto;
@@ -188,16 +189,17 @@ header .headerWrap div p {
   background-color: #e3e5e4;
 }
 
-.celebrate div span {
+.celebrate div p {
   font-size: var(--text-size);
   font-style: normal;
   font-weight: var(--f-weightSm);
   font-family: var(--font1);
   color: var(--text-color);
-  gap: 0.5rem;
-  display: flex;
-  align-items: center;
   white-space: nowrap;
+}
+
+.celebrate div p img {
+  height: 1.3rem;
 }
 
 .celebrate div > :last-child {
@@ -754,7 +756,7 @@ header .headerWrap div p {
   display: grid;
   padding: 10px;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .dot {
@@ -790,35 +792,9 @@ header .headerWrap div p {
 }
 
 /* Logo Styles */
-.logo-area {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.logo-icon {
-  width: 16px;
-  height: 16px;
-  background-color: #111;
-  margin-right: 8px;
-  position: relative;
-}
-/* Creates the little cutout in the logo icon */
-.logo-icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 6px;
-  height: 6px;
-  background-color: #f7f7f7;
-}
-
-.logo-text {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #111;
-  letter-spacing: -0.5px;
+.text-scro-hol2 .logo-area {
+  height: 5rem;
+  width: 14rem;
 }
 
 /* Quote Styles */
@@ -877,13 +853,22 @@ header .headerWrap div p {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 1rem;
-  flex: 1;
   display: flex;
   flex-flow: column nowrap;
   gap: 3rem;
   justify-content: center;
   justify-content: space-between;
-  padding: 3rem 3rem;
+  padding: 3rem 0;
+}
+
+.busDev > :first-child aside {
+  aspect-ratio: 550 / 440;
+}
+
+.busDev > :first-child img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .busDev h3,
@@ -907,10 +892,6 @@ header .headerWrap div p {
   color: color-mix(in oklab, var(--white-color) 80%, transparent);
   line-height: 1.5;
   letter-spacing: 0.01rem;
-}
-
-.busDev div {
-  flex: 1;
 }
 
 .busDev div,
@@ -980,9 +961,11 @@ header .headerWrap div p {
 
 /* video styles */
 .container {
-  /* width: 710px; */
-  flex: 1;
+  aspect-ratio: 598 / 427;
+  max-width: 598px;
+  width: 100%;
   height: 100%;
+  min-height: 100%;
   padding: 7rem 0;
   display: flex;
   align-items: flex-end;
@@ -994,7 +977,7 @@ header .headerWrap div p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font1);
 }
 
 .leftCards,
@@ -1008,7 +991,7 @@ header .headerWrap div p {
 .leftCards {
   position: absolute;
   left: 2rem;
-  top: 16rem;
+  top: 11rem;
 }
 .rightCards {
   position: absolute;
@@ -1163,9 +1146,10 @@ header .headerWrap div p {
 /* Video */
 /* 1. Aspect ratio lock */
 .aspect-video-wrap {
-  width: 100%;
-  max-width: 300px;
+  position: relative;
   aspect-ratio: 293 / 395;
+  max-width: 293px;
+  width: 100%;
   background: transparent !important;
   margin-bottom: -8.5rem;
 }
@@ -1173,13 +1157,10 @@ header .headerWrap div p {
 /* 2. Mask / clipping layer */
 .video-mask {
   width: 100%;
-  height: 100%;
-  border-radius: 16px;
+  max-width: 293px;
   overflow: hidden;
-  position: relative;
+  background: transparent;
   z-index: 10;
-  background: transparent !important;
-  border-radius: 4rem;
 }
 
 .video-mask::after {
@@ -1188,19 +1169,24 @@ header .headerWrap div p {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-    0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* 3. Inner wrapper */
 .video-inner {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-width: 293px;
+  background: transparent;
 }
 
 /* 4. Video itself */
 .video-inner video {
   width: 100%;
+  border-top-left-radius: 3.5rem;
+  border-top-right-radius: 3.5rem;
   height: 100%;
   object-fit: cover;
   display: block;
@@ -1436,11 +1422,12 @@ footer h6 {
 }
 
 /* Avatar circle (placeholder) */
-.avatar {
-  width: 36px;
-  height: 36px;
+.scroll_sec .avatar {
+  width: 38px;
+  height: 38px;
   background: #bbb;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 /* Name and detail */
@@ -1449,14 +1436,14 @@ footer h6 {
 }
 
 .info {
-  font-size: 14px;
-  color: #444;
   display: flex;
   flex-flow: column nowrap;
   gap: 5px;
 }
 
 .info p {
+  font-size: 14px;
+  color: #444;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1483,6 +1470,16 @@ footer h6 {
   color: #47964b;
 } /* green */
 
+.text-scro-hol2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
 /* media queries */
 
 /* responsive row scaling */
@@ -1506,17 +1503,212 @@ footer h6 {
   }
 }
 
-/* @media (max-width: 765px) {
-  .text-scro-hol2  {
-    display: grid;
-    
+@media (max-width: 768px) {
+  .iconSec h1 {
+    font-size: 4.5rem;
+    font-family: var(--font2);
+    font-weight: 600;
+    line-height: 1;
   }
-} */
+  .busDev,
+  .vdSec {
+    flex-flow: column nowrap;
+  }
+  .scroll_sec article .text-scro-hol {
+    padding-left: 0;
+    gap: 0;
+  }
+  .scroll_sec article .text-scro-hol h2 {
+    color: #000;
+    font-size: 22px;
+    font-family: var(--font1);
+    font-weight: var(--f-weightmd2);
+  }
+
+  .scroll_sec article .text-scro-hol p {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .scroll_sec article .text-scro-hol h3 {
+    max-width: 100%;
+    color: #000;
+    font-weight: 700;
+    font-size: 60px;
+  }
+
+  .scroll_sec article .text-scro-hol h6 {
+    color: #000000;
+    font-size: 15px;
+  }
+  .text-scro-hol2 {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .text-scro-hol2 > :first-child {
+    width: 100%;
+  }
+  .text-scro-hol2 > :first-child > :first-child {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 10px !important;
+    vertical-align: top;
+    aspect-ratio: 352 / 460 !important;
+    min-height: 100% !important;
+    max-width: 1500px !important;
+    max-height: 600px !important;
+    margin: 0 auto;
+  }
+  .card-container {
+    aspect-ratio: 0;
+    width: 100%;
+    height: 250px;
+  }
+  .demo {
+    padding: 0;
+    padding-bottom: 25rem;
+    margin-top: 20rem;
+  }
+  .demo h3 {
+    font-size: 38px;
+    font-weight: 600;
+    font-family: var(--font2);
+    color: #000;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 630px) {
+  .container {
+    aspect-ratio: 500 / 447;
+    max-width: 1500px;
+    max-height: 600px;
+  }
+  .video-inner {
+    position: absolute;
+    bottom: 0rem;
+    left: 4rem;
+    right: 4rem;
+    z-index: 1000;
+  }
+
+  .video-inner video {
+    width: 70%;
+    border-top-left-radius: 1.8rem;
+    border-top-right-radius: 1.8rem;
+    transform: translateX(5rem);
+  }
+
+  footer .ffSty {
+    flex-flow: column nowrap;
+  }
+  footer .footCont {
+    flex-wrap: wrap;
+  }
+
+  footer > :first-child > :first-child {
+    flex: 0;
+  }
+
+  footer .footCont div {
+    flex: 1;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
 
 @media (max-width: 600px) {
   .paraform-row {
     gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media (max-width: 563px) {
+  .slider {
+    margin-left: 50rem;
+    margin-bottom: -8rem;
+    border-radius: 8px;
+    height: 500px;
+    padding-bottom: 40rem;
+    border: 5px solid #ffffff;
+  }
+  .screen {
+    flex: none;
+    width: 250px;
+    padding: 15px;
+    position: relative;
+  }
+  .contain {
+    aspect-ratio: 352 / 460;
+    max-width: 1500px;
+    max-height: 600px;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+}
+
+@media (max-width: 453px) {
+  .celebrate div {
+    width: 100%;
+    padding: 0.4rem 0.3rem;
+    padding-right: 0.8rem;
+  }
+
+  .celebrate div p {
+    white-space: wrap;
+    padding-left: 1rem;
+  }
+  .companyHead h2 {
+    font-size: 35px;
+    line-height: 1.1;
+  }
+  .companyHead p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 426px) {
+  .contain {
+    aspect-ratio: 300/ 320;
+  }
+
+  .slider {
+    margin-left: 55rem;
+    margin-bottom: -22rem;
+    height: 500px;
+    padding-bottom: 40rem;
+    border: 5px solid #ffffff;
+  }
+
+  .card {
+    gap: 1.5rem;
+    padding: 6px 0 0 0;
+  }
+
+  .info p {
+    font-size: 12px;
+    gap: 3px;
+  }
+
+  .status {
+    font-size: 10px;
+    padding: 4px 8px;
+    text-align: left;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+}
+
+@media (max-width: 376px) {
+  .slider {
+    margin-left: 54rem;
+    margin-bottom: -26rem;
+    padding-bottom: 10rem;
   }
 }

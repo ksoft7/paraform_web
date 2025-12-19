@@ -21,7 +21,6 @@ const ParaformUI = () => {
       {/* Left Floating Cards */}
       <div
         className="leftCards"
-        // style={{ transform: `translateY(${leftFloat}px) rotate(-8deg)` }}
         style={{ transform: `translateY(${leftFloat}px) rotate(-5deg)` }}
       >
         <div className="glassCard">

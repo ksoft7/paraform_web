@@ -48,19 +48,7 @@ const ScrollSection = () => {
       statLabel: "Companies hiring",
       content: (
         <div className="text-scro-hol">
-          <div
-            className="text-scro-hol2"
-            style={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "10px",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1.5rem",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <div className="text-scro-hol2">
             <span>
               <FeatureShowcase />
             </span>
@@ -87,7 +75,6 @@ const ScrollSection = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              border: "1px solid",
             }}
           >
             <img src={KiaraImg} alt="Kiara" />
@@ -312,13 +299,10 @@ const ScrollSection = () => {
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
           .scroll_sec {
             gap: 3rem;
           }
-            .text-scro-hol2{
-            flex-wrap: wrap;
-            }
         }
 
         @media (max-width: 480px) {

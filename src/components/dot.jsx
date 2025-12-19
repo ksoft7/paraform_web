@@ -151,8 +151,7 @@ const TestimonialCard = () => {
       {/* 2. The Content Layer */}
       <div className="content-layer">
         <div className="logo-area">
-          <div className="logo-icon"></div>
-          <span className="logo-text">hightouch</span>
+          <img src="/log6.svg" alt="hightouch Image logo" />
         </div>
 
         <blockquote className="quote-text">

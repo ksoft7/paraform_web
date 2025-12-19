@@ -44,7 +44,6 @@ export default function CircularCarousel() {
   ];
 
   useEffect(() => {
-    // Create infinite array by duplicating items
     const infinite = [...items, ...items, ...items];
     setDisplayedItems(infinite);
   }, []);
@@ -57,10 +56,6 @@ export default function CircularCarousel() {
     return () => clearInterval(interval);
   }, []);
 
-  // const radius = 250;
-  // const angleStep = (2 * Math.PI) / items.length;
-
-  // Reset position when we get too far
   useEffect(() => {
     if (activeIndex >= items.length * 2 - 2) {
       const timer = setTimeout(() => {
@@ -114,19 +109,6 @@ export default function CircularCarousel() {
           })}
         </div>
       </div>
-
-      {/* <div style={styles.dots}>
-        {items.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            style={{
-              ...styles.dot,
-              ...(activeIndex % items.length === index ? styles.dotActive : {}),
-            }}
-          />
-        ))}
-      </div> */}
     </div>
   );
 }
@@ -160,30 +142,29 @@ const styles = {
   },
   card: {
     position: "absolute",
-    width: "280px",
-    height: "380px",
+    width: "320px",
+    height: "360px",
     transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
   },
   cardInner: {
     position: "relative",
     width: "100%",
     height: "100%",
-    borderRadius: "20px",
+    borderRadius: "12px",
     boxShadow: "0 20px 60px rgba(0, 0, 0, 0.6)",
+    padding: "15px",
   },
   crystalBorder: {
     position: "absolute",
-    top: "-5px",
-    left: "-5px",
-    right: "-5px",
-    bottom: "-5px",
-    borderRadius: "25px",
-    with: "100%",
+    top: "0",
+    left: "0",
+    right: "0",
+    bottom: "0",
+    borderRadius: "12px",
     background:
-      "linear-gradient(90deg, transparent 0%, #ffffff 30%, #ffffff 50%, #ffffff 70%, transparent 100%)",
-    // border: ".1px solid",
+      "linear-gradient(90deg, transparent 0%, #E7E6E6FF 30%, #E1DEDEFF 50%, #E0DFDFFF 70%, transparent 100%)",
     backgroundSize: "200% 100%",
-    padding: "1px",
+    padding: "2px",
     WebkitMask:
       "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
     WebkitMaskComposite: "xor",
@@ -191,7 +172,7 @@ const styles = {
     zIndex: 5,
     animation: "borderSnake 1.5s ease-in-out forwards",
     pointerEvents: "none",
-    filter: "drop-shadow(0 0 10px #FFFFFFFF) drop-shadow(0 0 20px #EEF3F2FF)",
+    filter: "drop-shadow(0 0 10px #EAE8E8FF) drop-shadow(0 0 20px #E3E4E4FF)",
   },
   image: {
     position: "relative",
@@ -199,27 +180,28 @@ const styles = {
     height: "100%",
     objectFit: "cover",
     display: "block",
-    borderRadius: "20px",
+    borderRadius: "10px",
     zIndex: 2,
   },
   overlay: {
     position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background:
-      "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%)",
+    top: "12px",
+    left: "12px",
+    right: "12px",
+    bottom: "12px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     padding: "24px",
     animation: "fadeIn 0.4s ease",
-    border: "none",
     zIndex: 3,
-    borderRadius: "20px",
+    borderRadius: "8px",
   },
-  // detailsTop: {},
+  detailsTop: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+  },
   name: {
     fontSize: "14px",
     fontWeight: "400",
@@ -232,11 +214,12 @@ const styles = {
     fontWeight: "400",
     color: "#fff",
     fontFamily: "var(--font2)",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
   },
   detailsBottom: {
     display: "flex",
     flexFlow: "column nowrap",
-    alignItems: "left",
+    alignItems: "flex-start",
   },
   description: {
     fontSize: "14px",
@@ -244,27 +227,7 @@ const styles = {
     color: "#e5e7eb",
     margin: 0,
     fontWeight: "400",
-  },
-  dots: {
-    display: "flex",
-    gap: "10px",
-    marginTop: "20px",
-  },
-  dot: {
-    width: "10px",
-    height: "10px",
-    borderRadius: "50%",
-    backgroundColor: "#334155",
-    border: "none",
-    cursor: "pointer",
-    transition: "all 0.3s ease",
-    padding: 0,
-  },
-  dotActive: {
-    backgroundColor: "#fff",
-    width: "32px",
-    borderRadius: "5px",
-    boxShadow: "0 0 10px #fff",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)",
   },
 };
 

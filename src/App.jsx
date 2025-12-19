@@ -35,10 +35,12 @@ function App() {
         <div className="celebrate">
           <div>
             <img src={ParaSm} alt="para Img" />
-            <span>
-              <p>Paraform raises $20M to build the future of hiring</p>
+
+            <p>
+              Paraform raises $20M to build the future of hiring{" "}
               <img src={Cele} alt="celebration icon" />
-            </span>
+            </p>
+
             <img src={DownRArr} alt="DownRArr" />
           </div>
         </div>
@@ -83,87 +85,9 @@ function App() {
         />
       </div>
 
-      {/* <section className="scroll_sec">
-        <article>
-          <div className="text-scro-hol">
-            <span>
-              <h2>Tap into elite recruiter networks</h2>
-              <p>
-                Only work with recruiters with a proven track record trusted by
-                world-class companies.
-              </p>
-            </span>
-            <span>
-              <h3>500+</h3>
-              <h6>Companies hiring</h6>
-            </span>
-          </div>
-          <div className="text-scro-hol2">
-            <FeatureShowcase />
-            <MagneticGrid />
-          </div>
-        </article>
-
-        <article>
-          <div className="text-scro-hol">
-            <span>
-              <h2>Meet candidates worth meeting</h2>
-              <p>
-                Cut through the noise with candidates that hit the mark — and
-                move fast from intro to interview.
-              </p>
-            </span>
-            <span>
-              <h3>70%</h3>
-              <h6>Interview rate</h6>
-            </span>
-          </div>
-          <figure>
-            <img src={KiaraImg} alt="Kiara" />
-          </figure>
-        </article>
-
-        <article>
-          <div className="text-scro-hol">
-            <span>
-              <h2>Hire faster with fewer hurdles</h2>
-              <p>
-                Streamlined workflows, no back-and-forth, no admin — just
-                pre-vetted warm intros, fast.
-              </p>
-            </span>
-            <span>
-              <h3>3X</h3>
-              <h6>Faster to hire</h6>
-            </span>
-          </div>
-          <figure>
-            <img src="/rigImg.png" alt="ss" />
-          </figure>
-        </article>
-
-        <article>
-          <div className="text-scro-hol">
-            <span>
-              <h2>White glove support</h2>
-              <p>
-                Your dedicated talent strategist is always a call or Slack away
-                — actively managing your search and surfacing market trends.
-              </p>
-            </span>
-            <span>
-              <h3>98%</h3>
-              <h6>Satisfaction rate</h6>
-            </span>
-          </div>
-          <figure>
-            <img src={Candate} alt="Candate" />
-          </figure>
-        </article>
-      </section> */}
       <ScrollJack />
 
-      {/* <section className="cardSlide">
+      <section className="cardSlide">
         <div className="companyHead">
           <h6>
             <span></span> Recruiters
@@ -191,7 +115,9 @@ function App() {
         <div className="busDev">
           <figure>
             <h3>Say goodbye to business development</h3>
-            <img src="/sofware.svg" alt="sofware img" />
+            <aside>
+              <img src="/sofware.svg" alt="sofware img" />
+            </aside>
             <p>
               We handle the business development, you focus on placing great
               talent. Paraform connects you to roles from high-growth startups
@@ -286,9 +212,9 @@ function App() {
           opacityt={0.7}
           hoverbg="0"
         />
-      </div> */}
+      </div>
 
-      {/* <Testimonial /> */}
+      <Testimonial />
 
       <section className="demo">
         <h3>Let us be your competitive advantage</h3>
@@ -310,7 +236,7 @@ function App() {
       </section>
 
       <footer>
-        <div className="footCont">
+        <div className="footCont ffSty">
           <figure>
             <img className="homeImg" src={HoImg} alt="homImg" />
           </figure>

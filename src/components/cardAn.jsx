@@ -76,7 +76,7 @@ const AnimatedCards = () => {
           >
             <motion.div variants={cardVariants} className="card">
               <span>
-                <div className="avatar"></div>
+                <img src="/alica.jpg" className="avatar" />
                 <div className="info">
                   <p>Alice Simmons </p>
                   <p>
@@ -88,7 +88,7 @@ const AnimatedCards = () => {
             </motion.div>
             <motion.div variants={cardVariants} className="card">
               <span>
-                <div className="avatar"></div>
+                <img src="/baldMan.jpg" className="avatar" />
                 <div className="info">
                   <p>Josh Cooper </p>
                   <p>
@@ -100,7 +100,7 @@ const AnimatedCards = () => {
             </motion.div>
             <motion.div variants={cardVariants} className="card">
               <span>
-                <div className="avatar"></div>
+                <img src="/asboy.jpg" className="avatar" />
                 <div className="info">
                   <p>Haeni Kim </p>
                   <p>
@@ -127,7 +127,7 @@ const AnimatedCards = () => {
           >
             <motion.div variants={cardVariants} className="card">
               <span>
-                <div className="avatar"></div>
+                <img src="/blackMan.jpg" className="avatar" />
                 <div className="info">
                   <p>Chisom Robertson </p>
                   <p>
@@ -152,7 +152,7 @@ const AnimatedCards = () => {
           >
             <motion.div variants={cardVariants} className="card">
               <span>
-                <div className="avatar"></div>
+                <img src="/isala.jpg" className="avatar" />
                 <div className="info">
                   <p>Isabella Romano</p>
                   <p>
@@ -164,7 +164,7 @@ const AnimatedCards = () => {
             </motion.div>
             <motion.div variants={cardVariants} className="card">
               <span>
-                <div className="avatar"></div>
+                <img src="/haina.jpg" className="avatar" />
                 <div className="info">
                   <p>Renata Kowalska</p>
                   <p>

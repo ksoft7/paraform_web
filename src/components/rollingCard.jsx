@@ -207,8 +207,7 @@ const styles = {
     backgroundImage: "url(/im.webp)",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    fontFamily: "var(--font1)",
   },
   mainWrapper: {
     height: "100%",
